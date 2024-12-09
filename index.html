@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapi - Product Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product Management</h1>
+
+        <form id="formdata" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Product Information</legend>
+
+                <label for="id_produk">Kode Produk</label>
+                <input type="text" name="id_produk" id="id_produk" placeholder="MD-001" readonly>
+
+                <label for="nama_produk">Nama Produk</label>
+                <input type="text" name="nama_produk" id="nama_produk" placeholder="Nama Produk" required>
+
+                <label for="harga_produk">Harga Produk</label>
+                <input type="number" name="harga_produk" id="harga_produk" placeholder="Harga Produk" required min="0" step="0.01">
+
+                <label for="satuan_produk">Satuan:</label>
+                <select name="satuan_produk" id="satuan_produk" required>
+                    <option value="" disabled selected>Pilih Satuan</option>
+                    <option value="Gelas">Gelas</option>
+                    <option value="Cup">Cup</option>
+                    <option value="Box">Box</option>
+                    <option value="Piring">Piring</option>
+                </select>
+                
+                <label for="kategori_produk">Kategori:</label>
+                <select name="kategori_produk" id="kategori_produk" required>
+                    <option value="" disabled selected>Pilih Kategori</option>
+                    <option value="Makanan Ringan">Makanan Ringan</option>
+                    <option value="Makanan Berat">Makanan Berat</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Dessert">Dessert</option>
+                </select>
+
+                <label for="stock_produk">Stock Produk</label>
+                <input type="number" name="stock_produk" id="stock_produk" placeholder="Stock Produk" required min="0">
+
+                <label for="gambar_produk">Link Gambar Produk</label>
+                <input type="url" name="gambar_produk" id="gambar_produk" placeholder="https://example.com/image.jpg" required>
+
+                <label for="stock_awal">Stock Awal</label>
+                <input type="number" name="stock_awal" id="stock_awal" placeholder="Stock Awal" min="0">
+
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+
+        <h2>Product List</h2>
+        <table aria-labelledby="product-list">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Produk</th>
+                    <th>Nama Produk</th>
+                    <th>Harga Produk</th>
+                    <th>Satuan Produk</th>
+                    <th>Kategori</th>
+                    <th>Stock Produk</th>
+                    <th>Gambar Produk</th>
+                    <th>Stock Awal</th>
+                    <th>Modify</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <!-- Data produk akan ditampilkan di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Dialog Konfirmasi Hapus -->
+    <div id="confirmDialog" class="dialog" style="display: none;">
+        <div class="dialog-content">
+            <p>Apakah Anda yakin ingin menghapus produk ini?</p>
+            <button id="confirmYes">Ya</button>
+            <button id="confirmNo">Tidak</button>
+        </div>
+    </div>
+
+    <!-- Dialog Edit Produk -->
+    <div id="editDialog" class="dialog" style="display: none;">
+        <div class="dialog-content">
+            <h3>Edit Produk</h3>
+            <form id="editForm">
+                <label for="edit_id_produk">ID Produk:</label>
+                <input type="text" id="edit_id_produk" readonly>
+                
+                <label for="edit_nama_produk">Nama Produk:</label>
+                <input type="text" id="edit_nama_produk">
+                
+                <label for="edit_harga_produk">Harga Produk:</label>
+                <input type="number" id="edit_harga_produk" step="0.01">
+                
+                <label for="edit_satuan_produk">Satuan Produk:</label>
+                <input type="text" id="edit_satuan_produk">
+                
+                <label for="edit_kategori_produk">Kategori Produk:</label>
+                <input type="text" id="edit_kategori_produk">
+                
+                <label for="edit_stock_produk">Stock Produk:</label>
+                <input type="number" id="edit_stock_produk">
+                
+                <label for="edit_gambar_produk">Gambar Produk:</label>
+                <input type="text" id="edit_gambar_produk">
+                
+                <label for="edit_stock_awal">Stock Awal:</label>
+                <input type="number" id="edit_stock_awal">
+                
+                <button type="submit">Simpan</button>
+                <button type="button" id="cancelEdit">Batal</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: 'Georgia', serif; /* Font yang elegan dan mudah dibaca */
+    background-color: #f9f9f9; /* Latar belakang yang lebih cerah */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff; /* Warna putih untuk konten */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: #6a4c93; /* Warna ungu yang menawan */
+    text-align: center;
+    font-family: 'Old English Text MT', cursive; /* Font medival */
+}
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 2px solid #6a4c93; /* Warna ungu untuk border */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px; 
+    background-color: #f3e5f5; /* Latar belakang pastel yang lembut */
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px; 
+    font-size: 1.2em;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #6a4c93; /* Warna ungu untuk border input */
+    border-radius: 4px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease; 
+}
+
+input:focus, select:focus {
+    border-color: #ab83c9; /* Warna lebih terang saat fokus */
+}
+
+button {
+    background-color: #6a4c93; /* Warna ungu untuk tombol */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+button:hover {
+    background-color: #5a3b7f; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #d1c4e9; /* Warna pastel untuk header tabel */
+    color: #4a2c91; /* Warna ungu gelap untuk teks header */
+}
+
+tr:hover {
+    background-color: #f1e1f1; /* Warna pastel saat hover pada baris */
+}
+
+.red {
+  background-color: red;
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna semi-transparan gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.dialog-content {
+    background-color: #f3e5f5; /* Warna latar belakang dialog yang lembut */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%; /* Mengatur lebar dialog menjadi 90% dari layar */
+    max-width: 600px; /* Menetapkan lebar maksimum untuk dialog */
+}
+
+.dialog-content button {
+    margin: 10px; /* Tambahkan jarak di sekitar tombol */
+}
+
+.dialog-content button[type="submit"] {
+    margin-right: 10px; /* Tambahkan jarak khusus di sebelah kanan tombol Simpan */
+}
+
+.dialog-content input[type="text"],
+.dialog-content input[type="number"],
+.dialog-content input[type="url"],
+.dialog-content select {
+    width: calc(100% - 20px); /* Mengatur lebar input agar sesuai dengan dialog */
+    margin-bottom: 15px; /* Memastikan jarak antar input */
+}   
